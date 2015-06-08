@@ -9,14 +9,11 @@ RUN npm install -g bower gulp
 
 RUN cd / && git clone https://github.com/c9/core.git c9 && cd c9 && scripts/install-sdk.sh
 
-EXPOSE 8181
-RUN mkdir -p /workspace
+EXPOSE 8181 3000 3001
 
 WORKDIR /tmp
-RUN wget -qO- https://github.com/coreos/etcd/releases/download/v2.0.10/etcd-v2.0.10-linux-amd64.tar.gz | tar -xvz && mv etcd-v2.0.10-linux-amd64/etcdctl /usr/bin/ 
+RUN wget -qO- https://github.com/coreos/etcd/releases/download/v2.0.10/etcd-v2.0.10-linux-amd64.tar.gz | tar -xvz && mv etcd-v2.0.10-linux-amd64/etcdctl /usr/bin/
 
 WORKDIR /c9
-ENTRYPOINT ["node", "server.js", "-p", "8181", "-l", "0.0.0.0", "-w", "/workspace"]
+ENTRYPOINT ["node", "server.js", "-p", "8181", "-l", "0.0.0.0", "-w", "/home/ubuntu"]
 CMD ["-a", ":"]
-
-  

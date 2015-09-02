@@ -13,6 +13,8 @@ RUN useradd -u 1000 -g sudo btburke
 
 EXPOSE 9000
 
+RUN chown -R btburke:btburke /c9
+USER btburke
 WORKDIR /c9
-ENTRYPOINT ["node", "server.js", "-p", "9000", "-l", "0.0.0.0", "-w", "/home/ubuntu"]
+ENTRYPOINT ["node", "server.js", "-p", "9000", "-l", "0.0.0.0", "-w", "/home/btburke/project"]
 CMD ["-a", ":"]

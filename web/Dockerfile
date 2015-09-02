@@ -9,6 +9,7 @@ RUN npm install -g bower gulp npm-install-missing
 
 RUN cd / && git clone https://github.com/c9/core.git c9 && cd c9 && scripts/install-sdk.sh
 
+RUN groupadd -g 1000 btburke
 RUN useradd -u 1000 -g sudo btburke
 
 EXPOSE 9000

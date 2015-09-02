@@ -4,5 +4,3 @@ web:
     - "19000:9000"
     - "18080:8080"
     - "35279:35279"
-  volumes:
-    - "/home/btburke:/home/btburke"

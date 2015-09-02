@@ -1,8 +1,11 @@
 web:
   build: web/.
   ports:
-    - "19000:9000"
-    - "18080:8080"
+    - "9001:9000"
+    - "8081:8081"
     - "35279:35279"
-  volumes:
-    - "/home/btburke/.ssh:/home/ubuntu/.ssh"
+api:
+  build: go/.
+  ports:
+    - "9000:9000"
+    - "8080:8080"

@@ -6,6 +6,7 @@ RUN cd /tmp && wget -qO- http://nodejs.org/dist/v0.12.7/node-v0.12.7.tar.gz | ta
 
 RUN npm install -g npm
 RUN npm install -g bower gulp npm-install-missing
+RUN gem install sass
 
 RUN cd / && git clone https://github.com/c9/core.git c9 && cd c9 && scripts/install-sdk.sh
 

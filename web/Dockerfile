@@ -10,6 +10,7 @@ RUN gem install sass
 
 RUN cd / && git clone https://github.com/c9/core.git c9 && cd c9 && scripts/install-sdk.sh
 
+
 EXPOSE 9000
 
 WORKDIR /c9

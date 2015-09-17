@@ -1,8 +1,8 @@
 FROM ubuntu:14.04
 
 RUN apt-get update && apt-get -y upgrade && apt-get -y install build-essential git ruby wget curl python zsh
-
-RUN cd /tmp && wget -qO- http://nodejs.org/dist/v0.12.7/node-v0.12.7.tar.gz | tar -xvz && cd node-v0.12.7 && ./configure && make && make install
+RUN apt-get install -y linux-headers-$(uname -r)
+RUN cd /tmp && wget -qO- https://nodejs.org/dist/v0.12.7/node-v0.12.7.tar.gz | tar -xvz && cd node-v0.12.7 && ./configure && make && make install
 
 RUN npm install -g npm
 RUN npm install -g bower gulp npm-install-missing

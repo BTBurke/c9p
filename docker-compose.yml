@@ -1,11 +1,18 @@
-web:
+webdev:
   build: web/.
   ports:
-    - "80:9000"
-    - "8081:8081"
-    - "35279:35279"
-api:
+    - "9000"
+    - "8081"
+    - "35279"
+apidev:
   build: go/.
   ports:
-    - "81:9000"
+    - "9000"
+    - "8080"
+proxy:
+  build: proxy/.
+  ports:
     - "8080:8080"
+  links:
+    - webdev
+    - apidev

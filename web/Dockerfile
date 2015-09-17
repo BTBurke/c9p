@@ -10,9 +10,9 @@ RUN gem install sass
 
 RUN cd / && git clone https://github.com/c9/core.git c9 && cd c9 && scripts/install-sdk.sh
 
-
+RUN mkdir -p /home/web
 EXPOSE 9000
 
 WORKDIR /c9
-ENTRYPOINT ["node", "server.js", "-p", "9000", "-l", "0.0.0.0", "-w", "/home/ubuntu"]
+ENTRYPOINT ["node", "server.js", "-p", "9000", "-l", "0.0.0.0", "-w", "/home/web"]
 CMD ["-a", ":"]
